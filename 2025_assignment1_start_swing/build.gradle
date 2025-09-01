@@ -1,0 +1,32 @@
+plugins {
+    id "java"
+    id "application"
+    id "pmd"
+}
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = "edu.curtin.saed.assignment1.App"
+}
+
+pmd {
+    consoleOutput = true
+    toolVersion = "7.15.0"
+    rulesMinimumPriority = 5
+    ruleSets = []
+    ruleSetFiles = files("saed-pmd-rules.xml")
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:all,-serial"
+}
+
+// tasks.named("run") {
+//     environment["PATH"] = (
+//         layout.projectDirectory.dir("comms").dir("bin").toString()
+//         + File.pathSeparator
+//         + System.getenv("PATH"))
+// }
