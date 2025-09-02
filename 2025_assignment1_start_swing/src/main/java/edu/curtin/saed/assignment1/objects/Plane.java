@@ -46,7 +46,7 @@ public class Plane
         return state;
     }
 
-    // --- Setters / simple transitions ---
+    
     public void setState(String newState)
     {
         this.state = newState;
@@ -63,15 +63,6 @@ public class Plane
         this.currentAirportId = airportId;
     }
 
-    @Override
-    public String toString()
-    {
-        return "Plane{id=" + id
-            + ", state=" + state
-            + ", x=" + x
-            + ", y=" + y
-            + ", airport=" + currentAirportId + "}";
-    }
 }
 
 
